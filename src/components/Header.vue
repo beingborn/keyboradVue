@@ -22,11 +22,16 @@
             </li>
           </ul>
         </nav>
-        <input type="text" placeholder="검색어를 입력하세요." />
-        <div>
-          <button type="button">한국어</button>
+        <div class="gnb-search">
+          <input type="text" placeholder="검색어를 입력하세요." />
         </div>
-        <router-link to="/Board">로그인</router-link>
+        <div class="gnb-util">
+          <div class="lang-change">
+            <i class="ico"></i>
+            <button class="btn bg-transparent" type="button">한국어</button>
+          </div>
+          <router-link class="btn-md bg-pri" to="/Board">로그인</router-link>
+        </div>
       </div>
     </div>
   </header>
@@ -44,4 +49,22 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+  header .logo {margin-right: 12px;}
+
+  .header-top {height: 40px; border-bottom: 1px solid #CCC;}
+  .header-top > ul {display: flex; align-items: center;}
+  .header-top > ul > li > a {line-height: 40px;}
+  .header-top > ul > li:first-child {padding-right: 8px;}
+  .header-top > ul > li:not(:first-child){padding-left: 8px; position: relative;}
+  .header-top > ul > li:not(:first-child)::before {content: ''; width: 1px; height: 12px; background: #CCC; display: inline-block; position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+
+  .header-btm {height: 64px; display: flex; align-items: center;}
+  .header-btm #gnb > ul {display: flex; gap: 12px; padding-right: 12px;}
+  .header-btm .gnb-util {margin-left: auto; padding-left: 12px; display: flex; align-items: center; gap: 12px;}
+  .header-btm .gnb-search {flex: 1 1;}
+  .header-btm .gnb-search > input {height: 40px; background-color: #EEE;}
+
+
+  
+</style>
