@@ -1,0 +1,46 @@
+@import './reset.css';
+
+:root {
+  --container-padding-x: 20px;
+  --container-wrap-size: 1440px;
+
+  --pri: #00c471;
+}
+
+.inner {
+  width: 100%;
+  max-width: calc(var(--container-wrap-size));
+  padding: 0 var(--container-padding-x);
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 300;
+  src: url('../assets/fonts/Pretendard-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Pretendard-Regular.woff') format('woff'),
+    url('../assets/fonts/Pretendard-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 500;
+  src: url('../assets/fonts/Pretendard-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Pretendard-Medium.woff') format('woff'),
+    url('../assets/fonts/Pretendard-Medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 700;
+  src: url('../assets/fonts/Pretendard-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Pretendard-Bold.woff') format('woff'),
+    url('../assets/fonts/Pretendard-Bold.ttf') format('ttf');
+}
+
+body {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
+    'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    sans-serif;
+}
