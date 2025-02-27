@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header id="header">
     <div class="header-in">
       <div class="header-top inner">
         <ul>
@@ -26,10 +26,10 @@
           <input type="text" placeholder="검색어를 입력하세요." />
         </div>
         <div class="gnb-util">
-          <div class="lang-change">
-            <i class="ico"></i>
-            <button class="btn bg-transparent" type="button">한국어</button>
-          </div>
+          <button type="button" class="lang-change btn bg-transparent">
+            <font-awesome-icon :icon="['fas', 'globe']" />
+            한국어
+          </button>
           <router-link class="btn-md bg-pri" to="/Board">로그인</router-link>
         </div>
       </div>
