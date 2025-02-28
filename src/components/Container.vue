@@ -2,6 +2,7 @@
     <main id="container" class="inner">
         <ul class="tab-list">
             <li v-for="(tab, index) in tabList" :key="index">
+                <!-- 아이콘 삽입 필요 -->
                 <button type="button">{{ tab.name }}</button>
             </li>
         </ul>
@@ -21,11 +22,11 @@ export default {
     
         return {
             tabList : [
-                {name: '키보드', content: 'keyboard'},
-                {name: '스위치', content: 'switch'},
-                {name: '키캡', content: 'keycap'},
-                {name: '액세서리', content: 'accessories'},
-                {name: '마우스', content: 'mouse'},
+                {name: '키보드', content: 'keyboard', icon: ''},
+                {name: '스위치', content: 'switch', icon: ''},
+                {name: '키캡', content: 'keycap', icon: ''},
+                {name: '액세서리', content: 'accessories', icon: ''},
+                {name: '마우스', content: 'mouse', icon: ''},
             ]
         }
     }
