@@ -15,7 +15,9 @@
         <div class="tab-content" v-if="activeTab == 0">
             <ul class="product-list">
                 <li class="product-item">
-                    <div class="product-thumb"></div>
+                    <div class="product-thumb">
+                        <img src="https://img.danawa.com/prod_img/500000/570/903/img/71903570_1.jpg?shrink=130:130&_v=20241202131646" alt="제품 이미지">
+                    </div>
                     <div class="product-head">
                         <h2 class="product-head-tit"></h2>
                         <span>82,000원</span>
@@ -47,7 +49,8 @@ export default {
                 {name: '액세서리', content: 'accessories', icon:  ['fas', 'plug']},
                 {name: '마우스', content: 'mouse', icon:  ['fas', 'computer-mouse']},
             ],
-            activeTab : 0
+            activeTab : 0,
+            productList : []
         }
     },
 
