@@ -12,8 +12,25 @@
             </li>
         </ul>
 
-        <div class="tab-content" v-if="activeTab == 0">
+        <!-- 반복문 전 -->
+        <!-- tab.content를 변수로 만들어버리는 거지 -->
+        <!-- <div class="tab-contents">
             <ul class="product-list">
+                <li class="product-item" v-for="(tab.content, index) in tab.content" :key="index">아이템1</li>
+                <li class="product-item">아이템2</li>
+                <li class="product-item">아이템3</li>
+                <li class="product-item">아이템4</li>
+            </ul>
+        </div> -->
+
+
+        <div class="tab-content"  v-for="(tab, index)  in tabList" :key="index" :class="[tab.content, {'is-active' : activeTab === index}]"  >
+            {{ tab.content }}
+            // 탭 내부에는 product-list는 필수 필요
+            // product item은 각각의 json 파일을 참조
+            // 각각 tabcontent는 유지하되. 서로 각각의 데이터 파일을 가지고 있을려면
+
+            <!-- <ul class="product-list">
                 <li class="product-item">
                     <div class="product-thumb">
                         <img src="https://img.danawa.com/prod_img/500000/570/903/img/71903570_1.jpg?shrink=130:130&_v=20241202131646" alt="제품 이미지">
@@ -31,7 +48,7 @@
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul> -->
         </div>
 
     </main>
@@ -63,6 +80,8 @@ export default {
     mounted(){
         let tab = document.querySelectorAll('.tab-list li')
         tab[0].classList.add('is-active')
+        let tabContent = document.querySelectorAll('.tab-content')
+        tabContent[0].classList.add("is-active")
     }
 }
 </script>
@@ -73,4 +92,7 @@ export default {
     .tab-list > li.is-active :where(svg, button) {color: var(--pri)}
     .tab-list > li > button {font-size: 15px;}
     .tab-list > li > svg {width: 20px; height: 20px;}
+
+    .tab-content {display: none;}
+    .tab-content.is-active {display: block;}
 </style>
