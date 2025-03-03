@@ -44,7 +44,7 @@ export default {
   name: 'Header',
 
   computed: {
-    ...mapState(['gnbMenus']),
+    ...mapState(['gnbMenus', 'keyboard']),
   },
 }
 </script>

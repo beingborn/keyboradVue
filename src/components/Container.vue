@@ -23,12 +23,14 @@
             </ul>
         </div> -->
 
+        // 탭 내부에는 product-list는 필수 필요
+        // product item은 각각의 json 파일을 참조
+        // 각각 tabcontent는 유지하되. 서로 각각의 데이터 파일을 가지고 있을려면
+        {{ keyboardList[0].title }}
 
         <div class="tab-content"  v-for="(tab, index)  in tabList" :key="index" :class="[tab.content, {'is-active' : activeTab === index}]"  >
             {{ tab.content }}
-            // 탭 내부에는 product-list는 필수 필요
-            // product item은 각각의 json 파일을 참조
-            // 각각 tabcontent는 유지하되. 서로 각각의 데이터 파일을 가지고 있을려면
+            
 
             <!-- <ul class="product-list">
                 <li class="product-item">
@@ -55,6 +57,8 @@
 </template>
 
 <script>
+import keyboardList from '../assets/data/keyboard'
+
 export default {
     name : 'Container',
     data(){
@@ -67,7 +71,7 @@ export default {
                 {name: '마우스', content: 'mouse', icon:  ['fas', 'computer-mouse']},
             ],
             activeTab : 0,
-            productList : []
+            keyboardList : keyboardList,
         }
     },
 
