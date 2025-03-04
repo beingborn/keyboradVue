@@ -20,7 +20,7 @@ export default [
         "brand": "Cherry",
         "desc": "가볍고 구분감이 있는 타건감의 널리 사용되는 스위치",
         "price": 61000,
-        "image": "https://shop-phinf.pstatic.net/example_image.jpg",
+        "image": "https://images.unsplash.com/photo-1505740106531-4243f3831c78?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "like" : false
     },
     {
@@ -28,7 +28,7 @@ export default [
         "brand": "Cherry",
         "desc": "청축 특유의 클릭감과 소리가 특징인 기계식 스위치",
         "price": 63000,
-        "image": "https://shop-phinf.pstatic.net/example_image.jpg",
+        "image": "https://images.unsplash.com/photo-1624814448280-0f2d7d399b07?q=80&w=2621&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "like" : false
     },
     {
@@ -36,7 +36,7 @@ export default [
         "brand": "Gateron",
         "desc": "부드러운 리니어 타건감을 제공하는 인기 스위치",
         "price": 55000,
-        "image": "https://shop-phinf.pstatic.net/example_image.jpg",
+        "image": "https://images.unsplash.com/photo-1628116709703-c1c9ad550d36?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "like" : false
     },
     {
@@ -44,7 +44,7 @@ export default [
         "brand": "Gateron",
         "desc": "청축보다 더 강한 클릭감을 제공하는 타건감",
         "price": 58000,
-        "image": "https://shop-phinf.pstatic.net/example_image.jpg",
+        "image": "https://images.unsplash.com/photo-1580477371194-4593e3c7c6cf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "like" : false
     },
     {

@@ -15,10 +15,10 @@
         </ul>
         <div class="tab-content" v-for="(tab, index) in tabList" :key="index" :class="{'is-active' : activeTab === index}">
             <ul class="product-list">
-                <li class="product-item" v-for="(item, i) in tab.content" :key="i">
+                <li class="product-item" v-for="(item, index) in tab.content" :key="index">
                     <router-link to="/Board">
                         <div class="product-thumb">
-                            <img :src="item.image" alt="제품 이미지">
+                            <img :src="item.image + '&fm=webp'" loading="lazy" v-if="imageLoaded[index]"  alt="제품 이미지">
                             <div class="product-thumb-icon">
                                 <font-awesome-icon :icon="['far', 'heart']" />
                                 <font-awesome-icon :icon="['fas', 'cart-shopping']" />
@@ -75,19 +75,36 @@ export default {
             ],
             activeTab : 0,
             keyboard : keyboard,
-            keycap : keycap
+            keycap : keycap,
+            imageLoaded : [true, true, true],
         }
     },
     methods : {
         changeTab(index){
             this.activeTab = index;
+        },  
+
+        // 배열 값을 가져온 후. 해당 값에 src값을 로딩 되었을 때 => onload 배열에 true로 추가
+        tabArrayReturn(){
+            for (let i = 0; i < this.tabList.length; i++){
+                return this.tabList[i].content    
+            }
+        },
+        imgLoad(){
+            const tabArray = this.tabArrayReturn()
+
+            tabArray.forEach((item, index) => {
+                console.log(item)
+            })
         }
     },
     mounted(){
-        let tab = document.querySelectorAll('.tab-list li')
-        tab[0].classList.add('is-active')
-        let tabContent = document.querySelectorAll('.tab-content')
-        tabContent[0].classList.add("is-active")
+        let tab = document.querySelectorAll('.tab-list li');
+        tab[0].classList.add('is-active');
+        let tabContent = document.querySelectorAll('.tab-content');
+        tabContent[0].classList.add("is-active");
+
+        this.imgLoad();
     }
 }
 </script>
