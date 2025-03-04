@@ -7,8 +7,10 @@
                 :class="{'is-active' : activeTab === index}"
                 @click="changeTab(index)"
                 >
-                <font-awesome-icon :icon="tab.icon" />
-                <button type="button" >{{ tab.name }}</button>
+                <button type="button">
+                    <font-awesome-icon :icon="tab.icon" />
+                    {{ tab.name }}
+                </button>
             </li>
         </ul>
         <div class="tab-content" v-for="(tab, index) in tabList" :key="index" :class="{'is-active' : activeTab === index}">
@@ -16,7 +18,7 @@
                 <li class="product-item" v-for="(item, i) in tab.content" :key="i">
                     <router-link to="/Board">
                         <div class="product-thumb">
-                            <img src="https://img.danawa.com/prod_img/500000/570/903/img/71903570_1.jpg?shrink=130:130&_v=20241202131646" alt="제품 이미지">
+                            <img :src="item.image" alt="제품 이미지">
                             <div class="product-thumb-icon">
                                 <font-awesome-icon :icon="['far', 'heart']" />
                                 <font-awesome-icon :icon="['fas', 'cart-shopping']" />
@@ -55,8 +57,8 @@
 
 <script>
 import keyboard from '../assets/data/keyboard'
-import keycap from '../assets/data/keycap'
-import switchList from '../assets/data/switchList'
+import keycap from '../assets/data/headset'
+import headset from '../assets/data/headset'
 import mouse from '../assets/data/mouse'
 import accessories from '../assets/data/accessories'
 
@@ -66,7 +68,7 @@ export default {
         return {
             tabList : [
                 {name: '키보드', content : keyboard, icon: ['far', 'keyboard']},
-                {name: '스위치', content: switchList, icon:  ['fas', 'bolt']},
+                {name: '헤드셋', content: headset, icon:  ['fas', 'bolt']},
                 {name: '키캡', content: keycap, icon:  ['fas', 'hockey-puck']},
                 {name: '액세서리', content: accessories, icon:  ['fas', 'plug']},
                 {name: '마우스', content: mouse, icon:  ['fas', 'computer-mouse']},
@@ -91,12 +93,11 @@ export default {
 </script>
 
 <style>
-    /* Tab  */
+    /* Tab */
     .tab-list {display: flex; gap: 20px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 12px 0;}
-    .tab-list > li {display: flex; flex-direction: column; gap: 4px; align-items: center;}
     .tab-list > li.is-active :where(svg, button) {color: var(--pri)}
-    .tab-list > li > button {font-size: 15px;}
     .tab-list > li > svg {width: 20px; height: 20px;}
+    .tab-list > li > button {font-size: 15px; display: flex; flex-direction: column; gap: 4px; align-items: center;}
     .tab-content {display: none; margin-top: 40px;}
     .tab-content.is-active {display: block;}
 
@@ -107,10 +108,11 @@ export default {
 
     /* Product Thumb */
     .product-thumb {position: relative;}
+    .product-thumb > img {object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%;}
     .product-thumb .product-thumb-icon {position: absolute; right: 20px; top: 20px;}
     .product-thumb .product-thumb-icon > svg {width: 28px; height: 28px; color: #ccc;}
     .product-thumb .product-thumb-icon > svg {margin-left: 8px;}
-
+    
     /* Product Detail */
     .product-head {width: 100%;}
     .product-head .product-head-tit {font-weight: 700; font-size: 24px; white-space: nowrap; overflow: hidden; width: 99%; text-overflow: ellipsis; } 

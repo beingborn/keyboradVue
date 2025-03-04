@@ -4,7 +4,7 @@ export default [
         "brand": "Cherry",
         "desc": "부드러운 리니어 타입의 대표적인 게이밍 키 스위치",
         "price": 59000,
-        "image": "https://shop-phinf.pstatic.net/example_image.jpg",
+        "image": "https://images.unsplash.com/photo-1538505135222-6238e66e7acc?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "like" : false
     },
     {
@@ -12,7 +12,7 @@ export default [
         "brand": "Cherry",
         "desc": "무겁고 깊은 키압을 가진 리니어 스위치",
         "price": 62000,
-        "image": "https://shop-phinf.pstatic.net/example_image.jpg",
+        "image": "https://images.unsplash.com/photo-1599669454699-248893623440?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "like" : false
     },
     {
