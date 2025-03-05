@@ -6,7 +6,8 @@
             </router-link>
             <p class="copyright">
                 Copyright 2025. mhlee All rights reserved. <br>
-                본 사이트의 정보와 이미지는 학습을 목적으로 한 가상 에셋들임을 밝힙니다.
+                본 사이트의 정보와 이미지는 학습을 목적으로 한 가상 에셋들입니다. <br>
+                <span class="img-copyright">출처 : https://www.unsplash.com</span>
             </p>
         </div>        
     </footer>
@@ -26,4 +27,5 @@ export default {
 
     /* Copyright */
     footer .copyright {font-weight: 300;}
+    footer .img-copyright {display: inline-block; margin-top: 12px; opacity: .6; font-weight: 300;}
 </style>

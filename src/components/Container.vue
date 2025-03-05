@@ -19,8 +19,10 @@
                     <router-link to="/Board">
                         <div class="product-thumb">
                             <img :src="item.image + '&fm=webp'" loading="lazy" v-if="imageLoaded[index]"  alt="제품 이미지">
+                            <div v-else class="image-loading">...Loading</div>
                             <div class="product-thumb-icon">
-                                <font-awesome-icon :icon="['far', 'heart']" />
+                                <font-awesome-icon v-if="item.like" :icon="['fas', 'heart']" />
+                                <font-awesome-icon v-else :icon="['far', 'heart']" />
                                 <font-awesome-icon :icon="['fas', 'cart-shopping']" />
                             </div>
                         </div>
@@ -57,7 +59,7 @@
 
 <script>
 import keyboard from '../assets/data/keyboard'
-import keycap from '../assets/data/headset'
+import speaker from '../assets/data/speaker'
 import headset from '../assets/data/headset'
 import mouse from '../assets/data/mouse'
 import accessories from '../assets/data/accessories'
@@ -68,15 +70,13 @@ export default {
         return {
             tabList : [
                 {name: '키보드', content : keyboard, icon: ['far', 'keyboard']},
-                {name: '헤드셋', content: headset, icon:  ['fas', 'bolt']},
-                {name: '키캡', content: keycap, icon:  ['fas', 'hockey-puck']},
+                {name: '헤드셋', content: headset, icon:  ['fas', 'headphones']},
+                {name: '스피커', content: speaker, icon:  ['fas', 'volume-high']},
                 {name: '액세서리', content: accessories, icon:  ['fas', 'plug']},
                 {name: '마우스', content: mouse, icon:  ['fas', 'computer-mouse']},
             ],
             activeTab : 0,
-            keyboard : keyboard,
-            keycap : keycap,
-            imageLoaded : [true, true, true],
+            imageLoaded : [],
         }
     },
     methods : {
@@ -93,8 +93,14 @@ export default {
         imgLoad(){
             const tabArray = this.tabArrayReturn()
 
+            // 로드된 UI만 true값으로 배열에 추가
             tabArray.forEach((item, index) => {
-                console.log(item)
+                const img = new Image();
+                img.src = item.image;
+
+                img.onload = () => {
+                    this.imageLoaded[index] = true;
+                }
             })
         }
     },
@@ -122,12 +128,14 @@ export default {
     .product-list {display: flex; flex-wrap: wrap; column-gap: 20px; row-gap: 24px;}
     .product-item {flex: 1 1 calc((100% - 60px) / 4); text-align: left; max-width: calc((100% - 60px) / 4);}
     .product-item .product-thumb {align-content: center; text-align: center; border: 1px solid #d8d8d8; border-radius: 12px; overflow: hidden; height: 200px;}
+    .product-item:hover .product-thumb > img {transition: all 300ms ease-in-out;}
+    .product-item:hover .product-thumb > img {filter: brightness(70%);}
 
     /* Product Thumb */
     .product-thumb {position: relative;}
     .product-thumb > img {object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%;}
     .product-thumb .product-thumb-icon {position: absolute; right: 20px; top: 20px;}
-    .product-thumb .product-thumb-icon > svg {width: 28px; height: 28px; color: #ccc;}
+    .product-thumb .product-thumb-icon > svg {width: 28px; height: 28px; color: var(--pri);}
     .product-thumb .product-thumb-icon > svg {margin-left: 8px;}
     
     /* Product Detail */
