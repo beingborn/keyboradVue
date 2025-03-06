@@ -5,7 +5,7 @@ export default [
         "desc": "2025 최고의 히트를 친 대역작",
         "price": 79000,
         "image": "https://images.unsplash.com/photo-1712231943623-984d5aefee65?q=80&w=2660&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "like" : true
+        "like" : false
     },
     {
         "title": "Razer BlackWidow V4 Pro",

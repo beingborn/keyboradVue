@@ -1,22 +1,15 @@
 import { createWebHistory, createRouter } from 'vue-router'
-import Board from '../components/Board.vue'
+import productDetail from '../components/productDetail.vue'
+import ProductList from '../components/productList.vue'
 
 const routes = [
   {
-    path: '/board',
-    component: Board,
+    path: '/',
+    component: ProductList,
   },
   {
-    path: '/used',
-    component: Board,
-  },
-  {
-    path: '/cart',
-    component: Board,
-  },
-  {
-    path: '/community',
-    component: Board,
+    path: '/productdetail',
+    component: productDetail,
   },
 ]
 

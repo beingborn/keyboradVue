@@ -1,5 +1,4 @@
 <template>
-    <main id="container" class="inner">
         <ul class="tab-list">
             <li role="tab"
                 v-for="(tab, index) in tabList"
@@ -16,13 +15,13 @@
         <div class="tab-content" v-for="(tab, index) in tabList" :key="index" :class="{'is-active' : activeTab === index}">
             <ul class="product-list">
                 <li class="product-item" v-for="(item, index) in tab.content" :key="index">
-                    <router-link to="/Board">
+                    <router-link to="/productdetail">
                         <div class="product-thumb">
                             <img :src="item.image + '&fm=webp'" loading="lazy" v-if="imageLoaded[index]"  alt="제품 이미지">
                             <div v-else class="image-loading">...Loading</div>
                             <div class="product-thumb-icon">
-                                <font-awesome-icon v-if="item.like" :icon="['fas', 'heart']" />
-                                <font-awesome-icon v-else :icon="['far', 'heart']" />
+                                <font-awesome-icon v-if="item.like" :icon="['fas', 'heart']" @click="item.like = !item.like"/>
+                                <font-awesome-icon v-else :icon="['far', 'heart']" @click="item.like = !item.like"/>
                                 <font-awesome-icon :icon="['fas', 'cart-shopping']" />
                             </div>
                         </div>
@@ -54,7 +53,6 @@
                 </button>
             </div>
         </div>
-    </main>
 </template>
 
 <script>
@@ -76,6 +74,9 @@ export default {
                 {name: '마우스', content: mouse, icon:  ['fas', 'computer-mouse']},
             ],
             activeTab : 0,
+            activeTabPosts : [],
+            activeTabCurrent : 1, // 현재 위치
+            activeTabPages : 10, // 보여줄 갯수
             imageLoaded : [],
         }
     },
