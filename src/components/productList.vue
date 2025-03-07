@@ -15,8 +15,19 @@
         <div class="tab-content" v-for="(tab, index) in tabList" :key="index" :class="{'is-active' : activeTab === index}">
             <ul class="product-list">
                 <li class="product-item" v-for="(item, index) in tab.content" :key="index">
-                    <router-link to="/productdetail">
-                        <div class="product-thumb">
+                    <div class="product-item-in">
+                        <div 
+                        class="product-thumb" 
+                        @click="$router.push({
+                            path: `productdetail/${index}`, 
+                            query : { 
+                                title : item.title,
+                                desc  : item.desc,
+                                price : item.price,
+                            }
+                        })"
+                        
+                        >
                             <img :src="item.image + '&fm=webp'" loading="lazy" v-if="imageLoaded[index]"  alt="제품 이미지">
                             <div v-else class="image-loading">...Loading</div>
                             <div class="product-thumb-icon">
@@ -27,13 +38,13 @@
                         </div>
                         <div class="product-head">
                             <p class="product-head-brand">{{ item.brand }}</p>
-                            <h2 class="product-head-tit">{{ item.title }}</h2>
+                            <h2 class="product-head-tit" @click="$router.push(`productdetail/${index}`)">{{ item.title }}</h2>
                             <span class="product-head-price">{{ item.price}}원</span>
                         </div>
                         <div class="product-body">
                             <p class="product-body-desc">{{item.desc}}</p>
                         </div>
-                    </router-link>
+                    </div>
                 </li>
             </ul>
             <div class="paging">
@@ -134,14 +145,14 @@ export default {
 
     /* Product Thumb */
     .product-thumb {position: relative;}
-    .product-thumb > img {object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%;}
+    .product-thumb > img {object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%; cursor: pointer;}
     .product-thumb .product-thumb-icon {position: absolute; right: 20px; top: 20px;}
     .product-thumb .product-thumb-icon > svg {width: 28px; height: 28px; color: var(--pri);}
     .product-thumb .product-thumb-icon > svg {margin-left: 8px;}
     
     /* Product Detail */
     .product-head {width: 100%;}
-    .product-head .product-head-tit {font-weight: 700; font-size: 24px; white-space: nowrap; overflow: hidden; width: 99%; text-overflow: ellipsis; } 
+    .product-head .product-head-tit {font-weight: 700; font-size: 24px; white-space: nowrap; overflow: hidden; width: 99%; text-overflow: ellipsis; cursor: pointer;} 
     .product-head .product-head-price {font-size: 18px; font-weight: 500; margin: 8px 0; display: inline-block;}
     .product-head .product-head-brand {font-size: 20px; font-weight: 700; color: #dfdfdf; margin-top: 8px; margin-bottom: 4px; }
     .product-body .product-body-desc {font-size: 16px;}
