@@ -1,7 +1,14 @@
 <template>
     <div class="product-detail">
-        {{ id }}
-        {{ title }}
+        <div class="product-detail-left">
+            <div class="product-detail-thumb">
+            </div>
+        </div>
+        <div>
+            <div class="product-detail-title">
+                <h2>{{ title }}</h2>
+            </div>
+        </div>
     </div>
 </template>
 
