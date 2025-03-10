@@ -18,15 +18,7 @@
                     <div class="product-item-in">
                         <div 
                         class="product-thumb" 
-                        @click="$router.push({
-                            path: `productdetail/${index}`, 
-                            query : { 
-                                title : item.title,
-                                desc  : item.desc,
-                                price : item.price,
-                            }
-                        })"
-                        
+                        @click="routePushData(item, index)"
                         >
                             <img :src="item.image + '&fm=webp'" loading="lazy" v-if="imageLoaded[index]"  alt="제품 이미지">
                             <div v-else class="image-loading">...Loading</div>
@@ -114,6 +106,21 @@ export default {
                     this.imageLoaded[index] = true;
                 }
             })
+        },
+        // Vue 메서드 내부에서 라우터 사용 시 , this를 붙여줘야함
+        routePushData(item, index){
+            this.$router.push({
+                path  : `productdetail/${index}`, 
+                state : { 
+                    title : item.title,
+                    desc  : item.desc,
+                    price : item.price,
+                    src   : item.image,
+                    like  : item.like
+                }
+            })
+
+
         }
     },
     mounted(){

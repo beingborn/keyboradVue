@@ -10,6 +10,9 @@ const routes = [
   {
     path: '/productdetail/:id',
     component: productDetail,
+    name: 'ProductDetail',
+    // true로 설정 시 데이터 props로 설정
+    props: true,
   },
 ]
 
