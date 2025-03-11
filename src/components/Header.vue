@@ -63,8 +63,5 @@ export default {
   .header-btm #gnb > ul {display: flex; gap: 12px; padding-right: 12px;}
   .header-btm .gnb-util {margin-left: auto; padding-left: 12px; display: flex; align-items: center; gap: 12px;}
   .header-btm .gnb-search {flex: 1 1;}
-  .header-btm .gnb-search > input {height: 40px; background-color: #EEE;}
-
-
-  
+  .header-btm .gnb-search > input {height: 40px; background-color: #EEE;}  
 </style>

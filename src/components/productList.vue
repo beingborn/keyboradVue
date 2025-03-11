@@ -22,14 +22,16 @@
                         >
                             <img :src="item.image + '&fm=webp'" loading="lazy" v-if="imageLoaded[index]"  alt="제품 이미지">
                             <div v-else class="image-loading">...Loading</div>
-                            <div class="product-thumb-icon">
-                                <font-awesome-icon v-if="item.like" :icon="['fas', 'heart']" @click="item.like = !item.like"/>
-                                <font-awesome-icon v-else :icon="['far', 'heart']" @click="item.like = !item.like"/>
-                                <font-awesome-icon :icon="['fas', 'cart-shopping']" />
-                            </div>
                         </div>
                         <div class="product-head">
-                            <p class="product-head-brand">{{ item.brand }}</p>
+                            <div class="product-head-top">
+                                <p class="product-head-brand">{{ item.brand }}</p>
+                                <div class="product-thumb-icon pri">
+                                    <font-awesome-icon v-if="item.like" :icon="['fas', 'heart']" @click="item.like = !item.like"/>
+                                    <font-awesome-icon v-else :icon="['far', 'heart']" @click="item.like = !item.like"/>
+                                    <font-awesome-icon :icon="['fas', 'cart-shopping']" />
+                                </div>
+                            </div>
                             <h2 class="product-head-tit" @click="$router.push(`productdetail/${index}`)">{{ item.title }}</h2>
                             <span class="product-head-price">{{ item.price}}원</span>
                         </div>
@@ -149,20 +151,26 @@ export default {
     .product-item .product-thumb {align-content: center; text-align: center; border: 1px solid #d8d8d8; border-radius: 12px; overflow: hidden; height: 200px;}
     .product-item:hover .product-thumb > img {transition: all 300ms ease-in-out;}
     .product-item:hover .product-thumb > img {filter: brightness(70%);}
-
-    /* Product Thumb */
-    .product-thumb {position: relative;}
-    .product-thumb > img {object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%; cursor: pointer;}
-    .product-thumb .product-thumb-icon {position: absolute; right: 20px; top: 20px;}
-    .product-thumb .product-thumb-icon > svg {width: 28px; height: 28px; color: var(--pri);}
-    .product-thumb .product-thumb-icon > svg {margin-left: 8px;}
     
     /* Product Detail */
     .product-head {width: 100%;}
+    .product-head-top {display: flex; justify-content: space-between; align-items: center; margin-top: 8px; margin-bottom: 8px;}
     .product-head .product-head-tit {font-weight: 700; font-size: 24px; white-space: nowrap; overflow: hidden; width: 99%; text-overflow: ellipsis; cursor: pointer;} 
     .product-head .product-head-price {font-size: 18px; font-weight: 500; margin: 8px 0; display: inline-block;}
     .product-head .product-head-brand {font-size: 20px; font-weight: 700; color: #dfdfdf; margin-top: 8px; margin-bottom: 4px; }
     .product-body .product-body-desc {font-size: 16px;}
+
+    /* Product Thumb */
+    .product-thumb {position: relative;}
+    .product-thumb > img {object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%; cursor: pointer;}
+
+    /* Product Icon */
+    .product-thumb-icon {padding-right: 12px;}
+
+    [class*=-icon].pri > svg {color: var(--pri);} 
+
+    .product-thumb-icon > svg {width: 20px; height: 20px; cursor: pointer;}
+    .product-thumb-icon > svg + svg {margin-left: 8px;}
 
     /* Paging */
     .paging {display: flex; gap: 12px; justify-content: center; margin-top: 48px;}

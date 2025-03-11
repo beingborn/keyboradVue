@@ -5,6 +5,7 @@
   --container-wrap-size: 1440px;
 
   --pri: #00c471;
+  --gray: #CCC;
 }
 
 .inner {
@@ -67,6 +68,7 @@ input , select , textarea {
 
 /* Background */
 .bg-pri {background-color: var(--pri);}
+.bg-gray {background-color: var(--gray);}
 .bg-transparent {background-color: transparent;}
 
 /* Form */
@@ -91,10 +93,14 @@ button {border: 0;}
   border-radius: 8px;
 }
 
-[class*=btn-]:not(.bg-transparent, .bg-white) {color: #fff;}
+[class*=btn-]:not(.bg-transparent, .bg-white, .bg-gray) {color: #fff;}
 
 .btn-md {
   height: 36px;
+}
+.btn-lg {
+  height: 48px;
+  font-size: 20px;
 }
 
 /* Language change */
@@ -103,4 +109,9 @@ button {border: 0;}
   align-items: center;
   gap: 4px;
   color: #666;
+}
+
+/* Emphasis */
+strong, em {
+  font-weight: 700;
 }
