@@ -25,6 +25,7 @@
                 <button class="btn-lg bg-pri" type="button">구매하기</button>
                 <button class="btn-lg bg-gray" type="button">후기</button>
                 <button class="btn-lg bg-gray" type="button">후기 작성</button>
+                <p>메모: 후기 작성해서 데이터 추가 그 전 alert 만들기</p>
             </div>
         </div>
     </div>
