@@ -39,8 +39,24 @@
         <div class="product-review">
             <ul>
                 <li v-for="(item, index) in review" :key="index">
-                    <span>{{ item.username }}</span>
-                    <span>{{ item.review }}</span>
+                    <div class="product-review-in">
+                        <div class="user-profile-thumb thumb-60"></div>
+                        <div class="product-review-detail">
+                            <p class="product-review-user">
+                                {{ item.username }}
+                            </p>
+                            <div class="product-review-rating">
+                                <font-awesome-icon
+                                    v-for="a in item.rating"
+                                    :key="a"
+                                    :icon="['fas', 'star']"
+                                />
+                            </div>
+                            <p class="product-review-desc">
+                                {{ item.content }}
+                            </p>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -143,5 +159,39 @@ export default {
     gap: 12px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+/* Product Review */
+.product-review > ul > li {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.product-review > ul > li + li {
+    margin-top: 16px;
+}
+.product-review-user {
+    font-weight: 700;
+    font-size: 18px;
+}
+.product-review-desc {
+    color: #333;
+}
+.product-review {
+    max-height: 300px;
+    overflow-y: auto;
+}
+.product-review-in {
+    display: flex;
+    gap: 8px;
+    align-items: start;
+}
+.product-review-rating > svg {
+    color: var(--pri);
+}
+.product-review-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 </style>

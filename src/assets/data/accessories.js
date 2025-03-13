@@ -7,16 +7,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1596207891316-23851be3cc20?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
-        ],
-        review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -27,10 +21,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1677145503731-87bfe49e5c67?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -41,10 +35,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1593640495253-23196b27a87f?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -55,10 +49,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1639506522956-c6b78c99fa67?q=80&w=2591&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -69,10 +63,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1579931794097-0ad001e51edb?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -83,10 +77,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1532036521863-eb1e79f117b3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -97,10 +91,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1732310964074-2d425d1f8e78?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -111,10 +105,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1738834944873-0b8e6018338e?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -125,10 +119,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1590252973641-1352f1a8885e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -139,10 +133,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -153,10 +147,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -167,10 +161,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1650169075825-1ee9efe6e66a?q=80&w=2751&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -181,10 +175,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1610829118941-652081871e6c?q=80&w=2676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -195,10 +189,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1640721952964-d9547dfd6cc2?q=80&w=2685&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -209,10 +203,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1599355397843-718871791ad3?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -223,10 +217,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1622774098992-522026385372?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -237,10 +231,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1623278116733-07879b6237c0?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -251,10 +245,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1593392611486-bb795fc994b5?q=80&w=2640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
     {
@@ -265,10 +259,10 @@ export default [
         image: 'https://images.unsplash.com/photo-1685516004271-fc87d07f30de?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         like: false,
         review: [
-            { username: '개구린데요', review: '사지마셈' },
-            { username: '개구린데요2', review: '사지마셈2' },
-            { username: '개구린데요3', review: '사지마셈3' },
-            { username: '개구린데요4', review: '사지마셈4' },
+            { username: '개구린데요', content: '사지마셈', rating: 5 },
+            { username: '개구린데요2', content: '사지마셈2', rating: 4 },
+            { username: '개구린데요3', content: '사지마셈3', rating: 3 },
+            { username: '개구린데요4', content: '사지마셈4', rating: 4 },
         ],
     },
 ]

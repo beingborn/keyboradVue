@@ -178,8 +178,6 @@ export default {
                     review: JSON.stringify(item.review),
                 },
             })
-
-            console.log(item.review)
         },
     },
     mounted() {
