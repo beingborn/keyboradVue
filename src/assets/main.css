@@ -90,6 +90,15 @@ select {
     padding: 0 12px;
     width: 100%;
 }
+textarea {
+    resize: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 8px;
+}
 
 /* Btn */
 button {

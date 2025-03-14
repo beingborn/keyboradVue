@@ -1,67 +1,112 @@
 <template>
-    <div class="product-detail">
-        <div class="product-detail-left">
-            <div class="product-detail-thumb">
-                <img :src="src + '&fm=webp'" loading="lazy" alt="제품 이미지" />
-            </div>
-        </div>
-        <div class="product-detail-right">
-            <div class="product-detail-icon pri">
-                <font-awesome-icon v-if="like" :icon="['fas', 'heart']" />
-                <font-awesome-icon v-else :icon="['far', 'heart']" />
-                <font-awesome-icon :icon="['fas', 'cart-shopping']" />
-            </div>
-            <div class="product-detail-head">
-                <h2>{{ title }}</h2>
-                <p>{{ desc }}</p>
-                <div class="product-detail-price">
-                    <span>
-                        <strong>{{ price }}</strong
-                        >원
-                    </span>
+    <section>
+        <div class="product-detail">
+            <div class="product-detail-left">
+                <div class="product-detail-thumb">
+                    <img
+                        :src="src + '&fm=webp'"
+                        loading="lazy"
+                        alt="제품 이미지"
+                    />
                 </div>
             </div>
-            <div class="product-detail-body">
-                <button class="btn-lg bg-pri" type="button">구매하기</button>
-                <button class="btn-lg bg-gray" type="button">후기</button>
-                <button class="btn-lg bg-gray" type="button">후기 작성</button>
-                <p>메모: 후기 작성해서 데이터 추가 그 전 alert 만들기</p>
+            <div class="product-detail-right">
+                <div class="product-detail-icon pri">
+                    <font-awesome-icon v-if="like" :icon="['fas', 'heart']" />
+                    <font-awesome-icon v-else :icon="['far', 'heart']" />
+                    <font-awesome-icon :icon="['fas', 'cart-shopping']" />
+                </div>
+                <div class="product-detail-head">
+                    <h2>{{ title }}</h2>
+                    <p>{{ desc }}</p>
+                    <div class="product-detail-price">
+                        <span>
+                            <strong>{{ price }}</strong
+                            >원
+                        </span>
+                    </div>
+                </div>
+                <div class="product-detail-body">
+                    <button class="btn-lg bg-pri" type="button">
+                        구매하기
+                    </button>
+                    <button class="btn-lg bg-gray" type="button">후기</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="product-comment">
-        <div class="section-header">
-            <h2 class="section-header-tit">후기</h2>
-            <span>
-                <strong id="review">{{ review.length }}</strong
-                >개
-            </span>
-        </div>
-        <div class="product-review">
-            <ul>
-                <li v-for="(item, index) in review" :key="index">
-                    <div class="product-review-in">
-                        <div class="user-profile-thumb thumb-60"></div>
-                        <div class="product-review-detail">
-                            <p class="product-review-user">
-                                {{ item.username }}
-                            </p>
-                            <div class="product-review-rating">
-                                <font-awesome-icon
-                                    v-for="a in item.rating"
-                                    :key="a"
-                                    :icon="['fas', 'star']"
-                                />
-                            </div>
-                            <p class="product-review-desc">
-                                {{ item.content }}
+        <div class="product-comment">
+            <div class="section-header">
+                <h2 class="section-header-tit">후기</h2>
+                <span id="review">
+                    <strong>{{ review.length }}</strong
+                    >개
+                </span>
+            </div>
+            <div class="review-write">
+                <div class="review-write-in">
+                    <div class="review-write-header">
+                        <h2 class="review-write-tit">리뷰 작성</h2>
+                        <p>
+                            <span>{{ title }}</span
+                            >는 어떠셨나요?
+                        </p>
+                        <div class="review-write-rating">
+                            <font-awesome-icon
+                                v-for="a in 5"
+                                :key="a"
+                                :icon="['fas', 'star']"
+                            />
+                        </div>
+                        <div class="review-write-textarea">
+                            <textarea
+                                placeholder="다른 고객님에게 도움이 되도록 상품에 대한 50자 이내로 솔직한 평가를 남겨주세요."
+                                rows="5"
+                                @input="counter"
+                            ></textarea>
+                            <p id="text-limit">
+                                <span id="text-limit-current">{{
+                                    reviewCurrent
+                                }}</span>
+                                /
+                                <span id="text-limit-max">{{
+                                    reviewLimit
+                                }}</span>
                             </p>
                         </div>
+                        <div class="review-write-function">
+                            <button class="btn-lg bg-pri" type="button">
+                                완료
+                            </button>
+                        </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
+            <div class="product-review">
+                <ul>
+                    <li v-for="(item, index) in review" :key="index">
+                        <div class="product-review-in">
+                            <div class="user-profile-thumb thumb-60"></div>
+                            <div class="product-review-detail">
+                                <p class="product-review-user">
+                                    {{ item.username }}
+                                </p>
+                                <div class="product-review-rating">
+                                    <font-awesome-icon
+                                        v-for="a in item.rating"
+                                        :key="a"
+                                        :icon="['fas', 'star']"
+                                    />
+                                </div>
+                                <p class="product-review-desc">
+                                    {{ item.content }}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -72,7 +117,26 @@ export default {
     data() {
         return {
             title: null,
+            reviewCurrent: 0,
+            reviewLimit: 50,
         }
+    },
+
+    methods: {
+        counter(event) {
+            const str = event.target.value.length
+
+            if (str > this.reviewLimit) {
+                event.target.value = event.target.value.substring(
+                    0,
+                    this.reviewLimit
+                )
+                event.target.focus()
+                alert('입력 글자를 초과하셨습니다.')
+            } else {
+                this.reviewCurrent = str
+            }
+        },
     },
 
     // Created
@@ -161,8 +225,51 @@ export default {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.section-header > .section-header-tit {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.section-header #review {
+    font-size: 18px;
+}
+/* Product Review */
+.review-write {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+}
+.review-write-header .review-write-tit {
+    font-weight: 700;
+}
+
+.review-write-textarea {
+    position: relative;
+}
+.review-write-textarea #text-limit {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.review-write-textarea > textarea {
+    height: 200px;
+    margin-top: 12px;
+}
+.review-write-function {
+    margin-top: 10px;
+}
 
 /* Product Review */
+.product-review {
+    margin-top: 40px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.product-review-in {
+    display: flex;
+    gap: 8px;
+    align-items: start;
+}
 .product-review > ul > li {
     padding: 12px;
     border-radius: 8px;
@@ -177,15 +284,6 @@ export default {
 }
 .product-review-desc {
     color: #333;
-}
-.product-review {
-    max-height: 300px;
-    overflow-y: auto;
-}
-.product-review-in {
-    display: flex;
-    gap: 8px;
-    align-items: start;
 }
 .product-review-rating > svg {
     color: var(--pri);
