@@ -306,7 +306,7 @@ export default {
     margin-top: 12px;
 }
 .review-write-function {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .review-write-rating {
     display: flex;
