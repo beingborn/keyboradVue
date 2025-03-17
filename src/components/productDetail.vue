@@ -50,12 +50,39 @@
                             <span>{{ title }}</span
                             >는 어떠셨나요?
                         </p>
+                        <p class="review-write-info">
+                            아래 별을 드래그해서 평점을 남겨주세요!
+                        </p>
                         <div class="review-write-rating">
-                            <font-awesome-icon
-                                v-for="a in 5"
-                                :key="a"
-                                :icon="['fas', 'star']"
-                            />
+                            <div class="review-rating">
+                                <font-awesome-icon
+                                    v-for="a in 5"
+                                    :key="a"
+                                    :icon="['fas', 'star']"
+                                />
+                                <span class="rating-star">
+                                    <font-awesome-icon
+                                        v-for="a in 5"
+                                        :key="a"
+                                        :icon="['fas', 'star']"
+                                    />
+                                </span>
+                                <input
+                                    @input="ratingValue"
+                                    type="range"
+                                    value="1"
+                                    step="1"
+                                    min="0"
+                                    max="5"
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                class="rating-init btn-md bg-gray"
+                                @click="ratingInit"
+                            >
+                                초기화
+                            </button>
                         </div>
                         <div class="review-write-textarea">
                             <textarea
@@ -135,6 +162,25 @@ export default {
                 alert('입력 글자를 초과하셨습니다.')
             } else {
                 this.reviewCurrent = str
+            }
+        },
+        ratingValue(event) {
+            let targets = document.querySelectorAll('.review-rating > svg')
+
+            for (let i = 0; i < event.target.value; i++) {
+                targets[i].classList.add('is-active')
+            }
+        },
+        ratingInit(event) {
+            let initTarget = event.target.previousSibling
+            let initStars = initTarget.querySelectorAll('svg.is-active')
+
+            if (initStars.length > 0) {
+                initStars.forEach((initStar) => {
+                    initStar.classList.remove('is-active')
+                })
+            } else {
+                alert('초기화할 별이 없습니다.')
             }
         },
     },
@@ -239,6 +285,10 @@ export default {
     padding: 20px;
     border-radius: 8px;
 }
+
+.review-write-info {
+    color: #333;
+}
 .review-write-header .review-write-tit {
     font-weight: 700;
 }
@@ -257,6 +307,44 @@ export default {
 }
 .review-write-function {
     margin-top: 10px;
+}
+.review-write-rating {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 12px;
+}
+.review-write-rating svg {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+.review-write-rating svg.is-active {
+    color: var(--pri);
+}
+
+.review-write-rating .review-rating {
+    position: relative;
+    display: inline-block;
+}
+.review-write-rating .review-rating input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.review-write-rating .review-rating .rating-star {
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.review-write-rating .review-rating .rating-star > svg {
+    color: transparent;
 }
 
 /* Product Review */
