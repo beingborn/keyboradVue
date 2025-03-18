@@ -88,7 +88,7 @@
                             <textarea
                                 placeholder="다른 고객님에게 도움이 되도록 상품에 대한 50자 이내로 솔직한 평가를 남겨주세요."
                                 rows="5"
-                                @input="counter"
+                                @input="recodeWriting"
                             ></textarea>
                             <p id="text-limit">
                                 <span id="text-limit-current">{{
@@ -101,7 +101,11 @@
                             </p>
                         </div>
                         <div class="review-write-function">
-                            <button class="btn-lg bg-pri" type="button">
+                            <button
+                                @click="submitReview"
+                                class="btn-lg bg-pri"
+                                type="button"
+                            >
                                 완료
                             </button>
                         </div>
@@ -146,6 +150,8 @@ export default {
             title: null,
             reviewCurrent: 0,
             reviewLimit: 50,
+            reviewWriting: '',
+            reviewRating: 0,
         }
     },
 
@@ -164,11 +170,37 @@ export default {
                 this.reviewCurrent = str
             }
         },
+        recodeWriting(event) {
+            this.counter(event)
+            this.reviewWriting = event.target.value
+        },
         ratingValue(event) {
             let targets = document.querySelectorAll('.review-rating > svg')
 
             for (let i = 0; i < event.target.value; i++) {
                 targets[i].classList.add('is-active')
+            }
+
+            this.reviewRating = event.target.value
+        },
+        // 클릭 시 해당 요소가 있는 카테고리를 찾아
+        // 마지막 요소로 추가시켜주어야 한다.
+        // 이곳을 보내는 곳은 productList이고 그 안에서는 데이터들은 import로 받아와 출력하고 있다.
+        submitReview() {
+            let newReview = {
+                username: '구매자1',
+                content: this.reviewWriting,
+                rating: this.reviewRating,
+            }
+
+            if (this.reviewWriting != '') {
+                // 여기서 productList로 데이터를 보낸다.
+                this.emitter.emit('newReview', newReview)
+
+                // 홈으로 이동
+                this.$router.push('/')
+            } else {
+                console.log('공백임')
             }
         },
         ratingInit(event) {

@@ -187,6 +187,11 @@ export default {
         tabContent[0].classList.add('is-active')
 
         this.imgLoad()
+
+        this.emitter.on('newReview', (a) => {
+            // 여기서 전달받은 데이터 확인 후
+            console.log(a)
+        })
     },
 }
 </script>

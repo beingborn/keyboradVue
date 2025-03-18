@@ -13,6 +13,14 @@ library.add(fas, far, fab)
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import mitt from 'mitt'
 
+let emitter = mitt()
+let app = createApp(App)
 
-createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(store).use(router).mount('#app')
+app.config.globalProperties.emitter = emitter
+
+app.component('font-awesome-icon', FontAwesomeIcon)
+    .use(store)
+    .use(router)
+    .mount('#app')

@@ -17,6 +17,7 @@
     "bootstrap-icons": "^1.11.3",
     "bootstrap-vue": "^2.23.1",
     "install": "^0.13.0",
+    "mitt": "^3.0.1",
     "remove": "^0.1.5",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
