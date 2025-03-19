@@ -28,7 +28,7 @@
                 <div class="product-item-in">
                     <div
                         class="product-thumb"
-                        @click="routePushData(item, index)"
+                        @click="routePushData(tab.name, item, index)"
                     >
                         <img
                             :src="item.image + '&fm=webp'"
@@ -107,27 +107,27 @@ export default {
         return {
             tabList: [
                 {
-                    name: '키보드',
+                    name: 'keyboard',
                     content: keyboard,
                     icon: ['far', 'keyboard'],
                 },
                 {
-                    name: '헤드셋',
+                    name: 'headset',
                     content: headset,
                     icon: ['fas', 'headphones'],
                 },
                 {
-                    name: '스피커',
+                    name: 'speaker',
                     content: speaker,
                     icon: ['fas', 'volume-high'],
                 },
                 {
-                    name: '액세서리',
+                    name: 'accessories',
                     content: accessories,
                     icon: ['fas', 'plug'],
                 },
                 {
-                    name: '마우스',
+                    name: 'mouse',
                     content: mouse,
                     icon: ['fas', 'computer-mouse'],
                 },
@@ -164,7 +164,7 @@ export default {
             })
         },
         // Vue 메서드 내부에서 라우터 사용 시 , this를 붙여줘야함
-        routePushData(item, index) {
+        routePushData(category, item, index) {
             this.$router.push({
                 path: `productdetail/${index}`,
                 state: {
@@ -173,7 +173,7 @@ export default {
                     price: item.price,
                     src: item.image,
                     like: item.like,
-
+                    category: category,
                     // 객체나 배열을 넘길 때는 Json.stringify로 문자열 변환이 필요함
                     review: JSON.stringify(item.review),
                 },
@@ -188,9 +188,21 @@ export default {
 
         this.imgLoad()
 
-        this.emitter.on('newReview', (a) => {
+        this.emitter.on('newReview', (data) => {
             // 여기서 전달받은 데이터 확인 후
-            console.log(a)
+            this.tabList.forEach((tab) => {
+                if (tab.name == data.category) {
+                    tab.content.forEach((item) => {
+                        if (item.title == data.title) {
+                            // 데이터 가공
+                            delete data.title
+                            delete data.category
+
+                            item.review.unshift(data)
+                        }
+                    })
+                }
+            })
         })
     },
 }

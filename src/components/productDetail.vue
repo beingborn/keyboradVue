@@ -152,6 +152,7 @@ export default {
             reviewLimit: 50,
             reviewWriting: '',
             reviewRating: 0,
+            reviewCategory: '',
         }
     },
 
@@ -189,8 +190,10 @@ export default {
         submitReview() {
             let newReview = {
                 username: '구매자1',
+                title: this.title,
                 content: this.reviewWriting,
                 rating: this.reviewRating,
+                category: this.reviewCategory,
             }
 
             if (this.reviewWriting != '') {
@@ -229,6 +232,7 @@ export default {
         this.src = history.state.src
         this.like = history.state.like
         this.review = JSON.parse(history.state.review)
+        this.reviewCategory = history.state.category
     },
 }
 </script>
