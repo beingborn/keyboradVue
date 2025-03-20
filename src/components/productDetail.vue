@@ -322,6 +322,18 @@ export default {
     border-radius: 8px;
 }
 
+html[data-theme='darkMode'] #text-limit {
+    color: #222;
+}
+
+html[data-theme='darkMode'] .review-write {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme='darkMode'] :is(.review-write-info, .product-review-desc) {
+    color: #fff;
+}
+
 .review-write-info {
     color: #333;
 }

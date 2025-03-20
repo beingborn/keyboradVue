@@ -1,4 +1,5 @@
 import './assets/main.css'
+import './assets/ui-script'
 import router from './router/index'
 import store from './store/index'
 

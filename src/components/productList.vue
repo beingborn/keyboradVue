@@ -137,6 +137,7 @@ export default {
             activeTabCurrent: 1, // 현재 위치
             activeTabPages: 10, // 보여줄 갯수
             imageLoaded: [],
+            theme: 'lightMode',
         }
     },
     methods: {
@@ -204,6 +205,16 @@ export default {
                 }
             })
         })
+
+        let localTheme = localStorage.getItem('theme')
+
+        if (localTheme) {
+            document.documentElement.setAttribute('data-theme', localTheme)
+            this.theme = localTheme
+        } else {
+            document.documentElement.setAttribute('data-theme', localTheme)
+            window.localStorage.setItem('theme', this.theme)
+        }
     },
 }
 </script>

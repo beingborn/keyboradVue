@@ -59,6 +59,26 @@ body {
         'Segoe UI Symbol', sans-serif;
 }
 
+/* Theme Common */
+:is(button) {
+    color: var(--body-txt);
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--body-txt);
+}
+
+html[data-theme='lightMode'] {
+    --body-bg: #fff;
+    --body-txt: #222;
+}
+
+html[data-theme='darkMode'] {
+    --body-bg: #222;
+    --body-txt: #fff;
+}
+
 input,
 select,
 textarea {
