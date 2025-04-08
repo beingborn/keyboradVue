@@ -1,9 +1,9 @@
 <template>
-  <Header></Header>
+    <Header></Header>
     <main id="container" class="inner">
-      <router-view></router-view>
+        <router-view></router-view>
     </main>
-  <Footer></Footer>
+    <Footer></Footer>
 </template>
 
 <script>
@@ -12,22 +12,25 @@ import Footer from './components/Footer.vue'
 // import Container from './components/Container.vue'
 
 export default {
-  name: 'App',
-  components: {
-    Header, Footer, 
-  },
+    name: 'App',
+    components: {
+        Header,
+        Footer,
+    },
 
-  mounted(){
-    const headerHeight = document.getElementById('header').offsetHeight;
-    const footerHeight = document.getElementById('footer').offsetHeight;
-    const container = document.getElementById('container')
+    mounted() {
+        const headerHeight = document.getElementById('header').offsetHeight
+        const footerHeight = document.getElementById('footer').offsetHeight
+        const container = document.getElementById('container')
 
-    // 푸터 하단 고정 스타일링
-    container.style.minHeight = `calc(100vh - (${headerHeight + footerHeight }px))`
-  }
+        // 푸터 하단 고정 스타일링
+        container.style.minHeight = `calc(100vh - (${
+            headerHeight + footerHeight
+        }px))`
+
+        console.log(localStorage.getItem('theme'))
+    },
 }
 </script>
 
-<style>
-  
-</style>
+<style></style>

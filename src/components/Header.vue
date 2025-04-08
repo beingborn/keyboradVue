@@ -8,7 +8,11 @@
                             다크모드
                         </button>
                     </li>
-                    <li><button type="button">라이트</button></li>
+                    <li>
+                        <button @click="toggleTheme" type="button">
+                            라이트
+                        </button>
+                    </li>
                 </ul>
             </div>
             <div class="header-btm inner">
